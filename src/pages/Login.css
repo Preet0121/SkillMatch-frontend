@@ -1,0 +1,234 @@
+/* Full screen background */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ background: radial-gradient(
+  circle at top,
+  rgba(7, 230, 238, 0.35),
+  rgba(60, 61, 63, 0.95)
+),
+linear-gradient(180deg, #020617, #020617);
+
+}
+
+
+/* Card */
+.login-card {
+  width: 420px;
+  background: rgba(224, 42, 42, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  animation: fadeUp 0.9s ease forwards;
+  transform: translateY(40px);
+  opacity: 0;
+}
+.login-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.login-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: white;
+}
+
+/* Subtitle */
+.login-subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 28px;
+  color: white;
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 18px;
+
+}
+.login-input::placeholder {
+  color: gray;
+  opacity: 1;
+}
+.login-input:focus {
+  outline: 2px solid #0a53f1;
+}
+
+/* Options */
+.login-options {
+  text-align: right;
+  margin-bottom: 22px;
+}
+
+.forgot {
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Login button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #0a50e7;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Signup */
+.signup-text {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 16px;
+  opacity: 0.9;
+  color: white;
+}
+
+.signup-text span {
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signup-text span:hover {
+  text-decoration: underline;
+  
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Password field with eye */
+.password-box {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  padding-right: 45px;
+}
+
+.eye {
+  position: absolute;
+  right: 1px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 1.7;
+  user-select: none;
+}
+
+.eye:hover {
+  opacity: 1;
+}
+
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ===== Animated Background Blobs ===== */
+
+.blobs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.55;
+  animation: float 18s infinite ease-in-out;
+}
+
+/* Individual blobs */
+.blob1 {
+  background: #6366f1;
+  top: 10%;
+  left: 15%;
+}
+
+.blob2 {
+  background: #22d3ee;
+  bottom: 15%;
+  right: 20%;
+  animation-delay: 6s;
+}
+
+.blob3 {
+  background: #818cf8;
+  top: 40%;
+  right: 35%;
+  animation-delay: 12s;
+}
+
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -40px) scale(1.15);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+/* Login page - underline link */
+.signup-text span {
+  color: #f6f6f7;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+.signup-text span:hover {
+  color: #f1f2f3;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+ 
+.Signup-link {
+  color: white;
+}
