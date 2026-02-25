@@ -305,12 +305,21 @@
 
 
 import { Link, useNavigate } from "react-router-dom";
-
+import ParticlesBackground from "../components/ParticlesBackground";
+import studentIcon from "../assets/student.png";
+import projectIcon from "../assets/projects.png";
+import messageIcon from "../assets/messages.png";
+import pitchIcon from "../assets/pitches.png";
+import achievementIcon from "../assets/achievements.png";
 export default function Home() {
   const navigate = useNavigate();
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 transition-all duration-300 ease-in-out">
+ return (
+  <div className="relative min-h-screen text-slate-200">
+  <ParticlesBackground />
+  <div className="fixed inset-0 -z-10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
+
+    {/* Top Navbar */}
 
       {/* Top Navbar */}
       <div className="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 px-8 py-4 flex justify-between items-center shadow-lg">
@@ -341,10 +350,10 @@ export default function Home() {
 
         {/* Welcome Section */}
         <div className="mb-14">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Welcome 👋
-          </h1>
-          <p className="text-slate-400 mt-4 text-lg">
+          <h1 className="text-4xl font-bold">
+  Welcome <span className="text-5xl">👋</span>
+</h1>
+          <p className="text-slate-400 mt-4 text-xl">
             Connect with students, pitch ideas, and build projects together.
           </p>
         </div>
@@ -364,63 +373,90 @@ export default function Home() {
         {/* Quick Action Cards */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 mb-20">
 
+          
           <Link
-            to="/browse-students"
-            className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center
-                       hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/20
-                       transform hover:-translate-y-2
-                       transition-all duration-300 ease-in-out"
-          >
-            <h3 className="font-semibold text-slate-200 text-lg">
-              Browse Students
-            </h3>
-          </Link>
+  to="/browse-students"
+className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center min-h-[200px] flex flex-col justify-cente
+             hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/20
+             transform hover:-translate-y-2
+             transition-all duration-300 ease-in-out"
+>
+
+  <img
+    src={studentIcon}
+    alt="students"
+    className="w-20 mx-auto mb-6"
+  />
+
+  <h3 className="font-semibold text-slate-200 text-xl">
+    Browse Students
+  </h3>
+
+</Link>
 
           <Link
             to="/browse-projects"
-            className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center
+            className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center min-h-[200px] flex flex-col justify-cente
                        hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/20
                        transform hover:-translate-y-2
                        transition-all duration-300 ease-in-out"
+
+                       
           >
-            <h3 className="font-semibold text-slate-200 text-lg">
-              Projects
+            <img src={projectIcon} alt="" className="w-20 mx-auto mb-6" />
+<h3 className="font-semibold text-slate-200 text-xl">
+  Projects
+</h3>
+            <h3 className="font-semibold text-slate-200 text-xl">
+              
             </h3>
           </Link>
 
           <Link
             to="/messages"
-            className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center
+           className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center min-h-[200px] flex flex-col justify-cente
                        hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/20
                        transform hover:-translate-y-2
                        transition-all duration-300 ease-in-out"
           >
-            <h3 className="font-semibold text-slate-200 text-lg">
-              Messages
+            <img src={messageIcon} alt="" className="w-20 mx-auto mb-6" />
+<h3 className="font-semibold text-slate-200 text-lg">
+  Messages
+</h3>
+            <h3 className="font-semibold text-slate-200 text-xl">
+              
             </h3>
           </Link>
 
           <Link
             to="/pitches"
-            className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center
+            className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center min-h-[200px] flex flex-col justify-cente
                        hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/20
                        transform hover:-translate-y-2
                        transition-all duration-300 ease-in-out"
           >
-            <h3 className="font-semibold text-slate-200 text-lg">
-              Pitches
+            <img src={pitchIcon} alt="" className="w-20 mx-auto mb-6" />
+<h3 className="font-semibold text-slate-200 text-xl">
+  Pitches
+</h3>
+            <h3 className="font-semibold text-slate-200 text-xl">
+             
             </h3>
           </Link>
 
           <Link
             to="/achievements"
-            className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center
+         className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center min-h-[200px] flex flex-col justify-cente
                        hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/20
                        transform hover:-translate-y-2
                        transition-all duration-300 ease-in-out"
           >
-            <h3 className="font-semibold text-slate-200 text-lg">
-              Achievements
+            <img src={achievementIcon} alt="" className="w-20 mx-auto mb-6" />
+<h3 className="font-semibold text-slate-200 text-xl">
+  Achievements
+</h3>
+            <h3 className="font-semibold text-slate-200 text-xl">
+              
             </h3>
           </Link>
 
@@ -428,7 +464,7 @@ export default function Home() {
 
         {/* My Projects */}
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold mb-8 text-slate-100">
+          <h2 className="text-4xl font-semibold mb-8 text-slate-100">
             My Projects
           </h2>
 
@@ -476,3 +512,4 @@ export default function Home() {
     </div>
   );
 }
+

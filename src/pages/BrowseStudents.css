@@ -1,21 +1,27 @@
-n/* Page background */
+/* Page background */
 .browse-container {
   padding: 40px 60px;
-  background: #f8fafc;
+  background: radial-gradient(circle at top left,#e4e7e4,transparent 40%),
+            radial-gradient(circle at bottom right,#ecf1ec,transparent 40%),
+            linear-gradient(135deg,#eaf1ea,#f5f1f5);
   min-height: 100vh;
   font-family: "Inter", sans-serif;
+  color: #01050f;
 }
+
 
 /* Heading */
 .browse-container h1 {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #0f172a;
+  background: linear-gradient(90deg,#030b0c,#6366f1,#ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .browse-container p {
-  color: #475569;
+  color: #1d1d1e;
   margin-bottom: 28px;
 }
 
@@ -30,29 +36,34 @@ n/* Page background */
   flex: 1;
   padding: 14px 18px;
   font-size: 15px;
-  border-radius: 10px;
+  border-radius: 14px;
   border: 1px solid #e2e8f0;
   outline: none;
-  background: #fff;
+  background: white;
+  color: #0f172a;
+  transition: all .2s ease;
 }
 
 .search-row input:focus {
-  border-color: #2563eb;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
 }
 
 /* Filter button */
 .filter-btn {
   padding: 14px 22px;
-  background: blue;
+  background: linear-gradient(135deg,#08d4f4,#05ebd4,#05ceed);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 14px;
   font-weight: 600;
   cursor: pointer;
+  transition: all .25s ease;
 }
 
 .filter-btn:hover {
-  background: blue;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(99,102,241,.35);
 }
 
 /* Filter options */
@@ -64,17 +75,24 @@ n/* Page background */
 
 .filter-options button {
   padding: 10px 18px;
-  border-radius: 20px;
+  border-radius: 999px;
   border: 1px solid #e2e8f0;
-  background: blue;
+  background: white;
+  color: #475569;
   cursor: pointer;
   font-size: 14px;
+  transition: all .2s ease;
+}
+
+.filter-options button:hover {
+  border-color: #6366f1;
+  color: #6366f1;
 }
 
 .filter-options button.active {
-  background: blue;
+  background: linear-gradient(135deg,#6366f1,#8b5cf6);
   color: white;
-  border-color: #2563eb;
+  border: none;
 }
 
 /* Grid */
@@ -88,27 +106,44 @@ n/* Page background */
 .student-card {
   background: white;
   padding: 26px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
   transition: all 0.25s ease;
+  position: relative;
+}
+
+/* Gradient glow border */
+.student-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(135deg,#6366f1,#06b6d4,#ec4899);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;   /* THIS FIXES THE CLICK ISSUE */
 }
 
 .student-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.08);
 }
 
 .student-card h3 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 14px;
-  color: #0f172a;
 }
 
 .student-card p {
   font-size: 14px;
   margin-bottom: 8px;
-  color: #334155;
+  color: #64748b;
 }
 
 /* Actions */
@@ -120,20 +155,24 @@ n/* Page background */
 
 .card-actions button {
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  background: #2a3cfa;
+  background: linear-gradient(135deg,#06b6d4,#6366f1);
+  color: white;
   font-size: 13px;
   cursor: pointer;
+  transition: all .25s ease;
 }
 
 .card-actions button:hover {
-  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99,102,241,.3);
 }
 
-/* Join button disabled look */
+/* Join button */
 .join-btn {
-  background: #2a3cfa !important;
-  color: #f1f5f9;
-  cursor: pointer;
+  background: linear-gradient(135deg,#ec4899,#8b5cf6) !important;
+}
+.student-card{
+background: linear-gradient(180deg,#ffffff,#f8fafc);
 }
